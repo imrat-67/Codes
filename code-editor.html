@@ -4,6 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+        }
+        header, footer {
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        textarea, select, button {
+            margin: 10px 0;
+            width: 100%;
+        }
+        textarea {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,23 +55,45 @@
         </nav>
     </header>
     <main>
-        <h2>Write and Run Code</h2>
-        <form>
+        <h2>Write, Test, and Run Your Code</h2>
+        <form id="code-editor-form">
             <label for="language">Select Language:</label>
-            <select id="language" name="language">
+            <select id="language" name="language" required>
                 <option value="c">C</option>
                 <option value="cpp">C++</option>
                 <option value="python">Python</option>
                 <option value="java">Java</option>
                 <option value="javascript">JavaScript</option>
-            </select><br><br>
+            </select>
             
-            <textarea id="code-editor" name="code-editor" rows="20" cols="80" placeholder="Write your code here..."></textarea><br>
-            <button type="submit">Run Code</button>
+            <label for="code">Code Editor:</label>
+            <textarea id="code" name="code" rows="15" placeholder="Write your code here..." required></textarea>
+            
+            <label for="input">Input:</label>
+            <textarea id="input" name="input" rows="5" placeholder="Enter input for your code (if any)..."></textarea>
+            
+            <label for="output">Output:</label>
+            <textarea id="output" name="output" rows="5" placeholder="Output will appear here..." readonly></textarea>
+            
+            <button type="button" id="run-code-button">Run Code</button>
         </form>
     </main>
     <footer>
         <p>&copy; 2024 Coding Platform. All Rights Reserved.</p>
     </footer>
+    <script>
+        // JavaScript for handling "Run Code" button
+        document.getElementById('run-code-button').addEventListener('click', function () {
+            const language = document.getElementById('language').value;
+            const code = document.getElementById('code').value;
+            const input = document.getElementById('input').value;
+            const outputBox = document.getElementById('output');
+
+            // Simulate execution
+            // For production, you would send the code to the server for compilation and execution
+            outputBox.value = "Running code in " + language + "...\n" + 
+                              "This is just a placeholder. Implement backend logic to compile and run the code.";
+        });
+    </script>
 </body>
 </html>
