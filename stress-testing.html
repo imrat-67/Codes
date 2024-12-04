@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Testing</title>
+</head>
+<body>
+    <header>
+        <h1>Stress Testing</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="topics.html">Topics</a>
+            <a href="code-editor.html">Code Editor</a>
+            <a href="community.html">Community</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Test Your Code (Currently c++ only)</h2>
+        <form id="stress-test-form">
+            <label for="code1">Correct Code:</label><br>
+            <textarea id="code1" name="code1" rows="10" cols="50" placeholder="Enter Code 1"></textarea><br>
+            
+            <label for="code2">Wrong Code:</label><br>
+            <textarea id="code2" name="code2" rows="10" cols="50" placeholder="Enter Code 2"></textarea><br>
+            
+            <label for="testcase">Test Case Generator:</label><br>
+            <textarea id="testcase" name="testcase" rows="10" cols="50" placeholder="Enter Test Case Generator"></textarea><br>
+            
+            <button type="button" id="run-test-button">Run Stress Test</button>
+        </form>
+        
+        <h3>Output:</h3>
+        <textarea id="output" rows="10" cols="50" readonly></textarea>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 <a href= "https://imtiaj-hossain-saikat.netlify.app">Imtiaj Hossain Saikat. </a> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('run-test-button').addEventListener('click', async () => {
+            const formData = new FormData(document.getElementById('stress-test-form'));
+            
+            // Send form data to the PHP backend
+            const response = await fetch('run-stress-test.php', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const result = await response.json();
+
+            if (result.output) {
+                // Show the output in the output textarea
+                document.getElementById('output').value = result.output;
+            } else {
+                // Show error message if there's any issue
+                document.getElementById('output').value = result.error;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+</head>
+<body>
+    <header>
+        <h1>Code Editor</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="topics.html">Topics</a> |
+            <a href="stress-testing.html">Stress Testing</a> |
+            <a href="community.html">Community</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Write, Test, and Run Your Code</h2>
+        <form id="code-form">
+            <label for="language">Select Language:</label>
+            <select id="language" name="language" required>
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+            </select>
+            <br><br>
+            <label for="code">Code Editor:</label><br>
+            <textarea id="code" name="code" rows="15" cols="80" placeholder="Write your code here..." required></textarea>
+            <br><br>
+            <label for="input">Input:</label><br>
+            <textarea id="input" name="input" rows="5" cols="80" placeholder="Enter input for your code (if any)..."></textarea>
+            <br><br>
+            <button type="button" id="run-code-button">Run Code</button>
+            <br><br>
+            <label for="output">Output:</label><br>
+            <textarea id="output" name="output" rows="5" cols="80" placeholder="Output will appear here..." readonly></textarea>
+            <br><br>
+        </form>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 <a href= "https://imtiaj-hossain-saikat.netlify.app">Imtiaj Hossain Saikat. </a> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('run-code-button').addEventListener('click', async () => {
+            const formData = new FormData(document.getElementById('code-form'));
+
+            try {
+                const response = await fetch('run-code.php', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                const result = await response.json();
+
+                if (result.error) {
+                    document.getElementById('output').value = "Error: " + result.error;
+                } else {
+                    document.getElementById('output').value = result.output;
+                }
+            } catch (error) {
+                document.getElementById('output').value = "Error: Failed to connect to server.";
+            }
+        });
+    </script>
+</body>
+</html>
