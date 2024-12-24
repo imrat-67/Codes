@@ -40,18 +40,26 @@
 </head>
 <body>
     <h1>Comprehensive C++ Function Reference</h1>
+
+    <!-- Introduction -->
     <div class="section">
         <div class="section-heading" onclick="toggleSection('introduction')">1. Introduction</div>
         <div class="section-content" id="introduction">
-            <p>This document provides a detailed reference to C++ functions, organized into categories and subcategories. It covers standard containers, algorithms, string and math functions, and Policy-Based Data Structures (PBDS).</p>
+            <p>This document provides a detailed reference to C++ functions, organized into categories and subcategories. It includes standard containers, algorithms, string and math functions, and Policy-Based Data Structures (PBDS). Each section is interactive and can be expanded or collapsed for ease of navigation.</p>
         </div>
     </div>
+
+    <!-- Standard Library Functions -->
     <div class="section">
-        <div class="section-heading" onclick="toggleSection('std-functions')">2. Standard Library Functions</div>
-        <div class="section-content" id="std-functions">
+        <div class="section-heading" onclick="toggleSection('std-library')">2. Standard Library Functions</div>
+        <div class="section-content" id="std-library">
+
+            <!-- Containers -->
             <div class="section">
                 <div class="section-heading" onclick="toggleSection('containers')">2.1 Containers</div>
                 <div class="section-content" id="containers">
+
+                    <!-- Vector -->
                     <div class="section">
                         <div class="section-heading" onclick="toggleSection('vector')">2.1.1 Vector</div>
                         <div class="section-content" id="vector">
@@ -65,10 +73,29 @@
                                 <li>clear()</li>
                                 <li>size()</li>
                                 <li>swap()</li>
-                                <!-- Add more vector functions as needed -->
                             </ul>
                         </div>
                     </div>
+
+                    <!-- List -->
+                    <div class="section">
+                        <div class="section-heading" onclick="toggleSection('list')">2.1.2 List</div>
+                        <div class="section-content" id="list">
+                            <p>Functions:</p>
+                            <ul>
+                                <li>push_back()</li>
+                                <li>push_front()</li>
+                                <li>pop_back()</li>
+                                <li>pop_front()</li>
+                                <li>clear()</li>
+                                <li>insert()</li>
+                                <li>erase()</li>
+                                <li>size()</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Bitset -->
                     <div class="section">
                         <div class="section-heading" onclick="toggleSection('bitset')">2.1.5 Bitset</div>
                         <div class="section-content" id="bitset">
@@ -86,19 +113,77 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Algorithms -->
+            <div class="section">
+                <div class="section-heading" onclick="toggleSection('algorithms')">2.2 Algorithms</div>
+                <div class="section-content" id="algorithms">
+                    <p>Functions:</p>
+                    <ul>
+                        <li>sort()</li>
+                        <li>stable_sort()</li>
+                        <li>partition()</li>
+                        <li>stable_partition()</li>
+                        <li>binary_search()</li>
+                        <li>reverse()</li>
+                        <li>nth_element()</li>
+                        <li>is_sorted()</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- String Functions -->
+            <div class="section">
+                <div class="section-heading" onclick="toggleSection('string-functions')">2.3 String Functions</div>
+                <div class="section-content" id="string-functions">
+                    <p>Functions:</p>
+                    <ul>
+                        <li>append()</li>
+                        <li>assign()</li>
+                        <li>at()</li>
+                        <li>back()</li>
+                        <li>clear()</li>
+                        <li>compare()</li>
+                        <li>find()</li>
+                        <li>insert()</li>
+                        <li>substr()</li>
+                        <li>replace()</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Math Functions -->
+            <div class="section">
+                <div class="section-heading" onclick="toggleSection('math-functions')">2.4 Math Functions</div>
+                <div class="section-content" id="math-functions">
+                    <p>Functions:</p>
+                    <ul>
+                        <li>abs()</li>
+                        <li>ceil()</li>
+                        <li>floor()</li>
+                        <li>pow()</li>
+                        <li>sqrt()</li>
+                        <li>sin()</li>
+                        <li>cos()</li>
+                        <li>tan()</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- PBDS -->
     <div class="section">
-        <div class="section-heading" onclick="toggleSection('algorithms')">3. Algorithms</div>
-        <div class="section-content" id="algorithms">
-            <p>Functions:</p>
+        <div class="section-heading" onclick="toggleSection('pbds')">3. PBDS (Policy-Based Data Structures)</div>
+        <div class="section-content" id="pbds">
+            <p>Policy-Based Data Structures extend STL with advanced containers.</p>
             <ul>
-                <li>sort()</li>
-                <li>stable_sort()</li>
-                <li>partition()</li>
-                <li>stable_partition()</li>
-                <li>binary_search()</li>
-                <li>reverse()</li>
+                <li>order_of_key()</li>
+                <li>find_by_order()</li>
+                <li>join()</li>
+                <li>split()</li>
+                <li>lower_bound()</li>
+                <li>upper_bound()</li>
             </ul>
         </div>
     </div>
