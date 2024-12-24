@@ -1,191 +1,110 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprehensive C++ Function Reference</title>
+    <title>std::vector Documentation</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        .section {
+        .example {
+            display: none;
             margin: 10px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #007BFF;
         }
-        .section-heading {
-            font-weight: bold;
+        .toggle {
             cursor: pointer;
             color: #007BFF;
-            margin: 5px 0;
-        }
-        .section-heading:hover {
             text-decoration: underline;
-        }
-        .section-content {
-            display: none;
-            margin-left: 20px;
         }
     </style>
     <script>
-        function toggleSection(id) {
-            const content = document.getElementById(id);
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
+        function toggleExample(id) {
+            const example = document.getElementById(id);
+            example.style.display = example.style.display === "none" ? "block" : "none";
         }
     </script>
 </head>
 <body>
-    <h1>Comprehensive C++ Function Reference</h1>
+    <h1>std::vector Documentation</h1>
 
-    <!-- Introduction -->
-    <div class="section">
-        <div class="section-heading" onclick="toggleSection('introduction')">1. Introduction</div>
-        <div class="section-content" id="introduction">
-            <p>This document provides a detailed reference to C++ functions, organized into categories and subcategories. It includes standard containers, algorithms, string and math functions, and Policy-Based Data Structures (PBDS). Each section is interactive and can be expanded or collapsed for ease of navigation.</p>
-        </div>
+    <!-- Example Template -->
+    <h2>1. Constructors</h2>
+    <h3>Default Constructor</h3>
+    <p>Initializes an empty vector.</p>
+    <span class="toggle" onclick="toggleExample('example1')">[Click to view example]</span>
+    <div class="example" id="example1">
+        <pre><code>
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    std::vector<int> v;
+    std::cout &lt;&lt; "Size: " &lt;&lt; v.size() &lt;&lt; std::endl;
+    return 0;
+}
+        </code></pre>
     </div>
 
-    <!-- Standard Library Functions -->
-    <div class="section">
-        <div class="section-heading" onclick="toggleSection('std-library')">2. Standard Library Functions</div>
-        <div class="section-content" id="std-library">
+    <h3>Fill Constructor</h3>
+    <p>Initializes a vector with specified size and value.</p>
+    <span class="toggle" onclick="toggleExample('example2')">[Click to view example]</span>
+    <div class="example" id="example2">
+        <pre><code>
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
 
-            <!-- Containers -->
-            <div class="section">
-                <div class="section-heading" onclick="toggleSection('containers')">2.1 Containers</div>
-                <div class="section-content" id="containers">
-
-                    <!-- Vector -->
-                    <div class="section">
-                        <div class="section-heading" onclick="toggleSection('vector')">2.1.1 Vector</div>
-                        <div class="section-content" id="vector">
-                            <p>Functions:</p>
-                            <ul>
-                                <li>assign()</li>
-                                <li>at()</li>
-                                <li>back()</li>
-                                <li>begin()</li>
-                                <li>emplace_back()</li>
-                                <li>clear()</li>
-                                <li>size()</li>
-                                <li>swap()</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- List -->
-                    <div class="section">
-                        <div class="section-heading" onclick="toggleSection('list')">2.1.2 List</div>
-                        <div class="section-content" id="list">
-                            <p>Functions:</p>
-                            <ul>
-                                <li>push_back()</li>
-                                <li>push_front()</li>
-                                <li>pop_back()</li>
-                                <li>pop_front()</li>
-                                <li>clear()</li>
-                                <li>insert()</li>
-                                <li>erase()</li>
-                                <li>size()</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Bitset -->
-                    <div class="section">
-                        <div class="section-heading" onclick="toggleSection('bitset')">2.1.5 Bitset</div>
-                        <div class="section-content" id="bitset">
-                            <p>Functions:</p>
-                            <ul>
-                                <li>all()</li>
-                                <li>any()</li>
-                                <li>count()</li>
-                                <li>flip()</li>
-                                <li>set()</li>
-                                <li>test()</li>
-                                <li>to_string()</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Algorithms -->
-            <div class="section">
-                <div class="section-heading" onclick="toggleSection('algorithms')">2.2 Algorithms</div>
-                <div class="section-content" id="algorithms">
-                    <p>Functions:</p>
-                    <ul>
-                        <li>sort()</li>
-                        <li>stable_sort()</li>
-                        <li>partition()</li>
-                        <li>stable_partition()</li>
-                        <li>binary_search()</li>
-                        <li>reverse()</li>
-                        <li>nth_element()</li>
-                        <li>is_sorted()</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- String Functions -->
-            <div class="section">
-                <div class="section-heading" onclick="toggleSection('string-functions')">2.3 String Functions</div>
-                <div class="section-content" id="string-functions">
-                    <p>Functions:</p>
-                    <ul>
-                        <li>append()</li>
-                        <li>assign()</li>
-                        <li>at()</li>
-                        <li>back()</li>
-                        <li>clear()</li>
-                        <li>compare()</li>
-                        <li>find()</li>
-                        <li>insert()</li>
-                        <li>substr()</li>
-                        <li>replace()</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Math Functions -->
-            <div class="section">
-                <div class="section-heading" onclick="toggleSection('math-functions')">2.4 Math Functions</div>
-                <div class="section-content" id="math-functions">
-                    <p>Functions:</p>
-                    <ul>
-                        <li>abs()</li>
-                        <li>ceil()</li>
-                        <li>floor()</li>
-                        <li>pow()</li>
-                        <li>sqrt()</li>
-                        <li>sin()</li>
-                        <li>cos()</li>
-                        <li>tan()</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+int main() {
+    std::vector<int> v(5, 10);
+    for (int x : v) {
+        std::cout &lt;&lt; x &lt;&lt; " ";
+    }
+    return 0;
+}
+        </code></pre>
     </div>
 
-    <!-- PBDS -->
-    <div class="section">
-        <div class="section-heading" onclick="toggleSection('pbds')">3. PBDS (Policy-Based Data Structures)</div>
-        <div class="section-content" id="pbds">
-            <p>Policy-Based Data Structures extend STL with advanced containers.</p>
-            <ul>
-                <li>order_of_key()</li>
-                <li>find_by_order()</li>
-                <li>join()</li>
-                <li>split()</li>
-                <li>lower_bound()</li>
-                <li>upper_bound()</li>
-            </ul>
-        </div>
+    <!-- Repeat for all member functions -->
+
+    <h2>2. Element Access</h2>
+    <h3>Access Element (operator[])</h3>
+    <p>Accesses an element by index without bounds checking.</p>
+    <span class="toggle" onclick="toggleExample('example3')">[Click to view example]</span>
+    <div class="example" id="example3">
+        <pre><code>
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    std::vector<int> v = {1, 2, 3, 4};
+    std::cout &lt;&lt; v[2] &lt;&lt; std::endl; // Output: 3
+    return 0;
+}
+        </code></pre>
     </div>
+
+    <h3>Access Element (at)</h3>
+    <p>Accesses an element by index with bounds checking.</p>
+    <span class="toggle" onclick="toggleExample('example4')">[Click to view example]</span>
+    <div class="example" id="example4">
+        <pre><code>
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    std::vector<int> v = {1, 2, 3, 4};
+    try {
+        std::cout &lt;&lt; v.at(2) &lt;&lt; std::endl; // Output: 3
+        std::cout &lt;&lt; v.at(10) &lt;&lt; std::endl; // Throws an exception
+    } catch (std::out_of_range& e) {
+        std::cerr &lt;&lt; e.what() &lt;&lt; std::endl;
+    }
+    return 0;
+}
+        </code></pre>
+    </div>
+
+    <!-- Continue similarly for all other functions -->
+
 </body>
 </html>
