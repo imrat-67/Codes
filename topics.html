@@ -1,110 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>std::vector Documentation</title>
-    <style>
-        .example {
-            display: none;
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border-left: 4px solid #007BFF;
-        }
-        .toggle {
-            cursor: pointer;
-            color: #007BFF;
-            text-decoration: underline;
-        }
-    </style>
-    <script>
-        function toggleExample(id) {
-            const example = document.getElementById(id);
-            example.style.display = example.style.display === "none" ? "block" : "none";
-        }
-    </script>
-</head>
+    <title>Topics</title>
+    </head>
 <body>
-    <h1>std::vector Documentation</h1>
-
-    <!-- Example Template -->
-    <h2>1. Constructors</h2>
-    <h3>Default Constructor</h3>
-    <p>Initializes an empty vector.</p>
-    <span class="toggle" onclick="toggleExample('example1')">[Click to view example]</span>
-    <div class="example" id="example1">
-        <pre><code>
-#include &lt;vector&gt;
-#include &lt;iostream&gt;
-
-int main() {
-    std::vector<int> v;
-    std::cout &lt;&lt; "Size: " &lt;&lt; v.size() &lt;&lt; std::endl;
-    return 0;
-}
-        </code></pre>
-    </div>
-
-    <h3>Fill Constructor</h3>
-    <p>Initializes a vector with specified size and value.</p>
-    <span class="toggle" onclick="toggleExample('example2')">[Click to view example]</span>
-    <div class="example" id="example2">
-        <pre><code>
-#include &lt;vector&gt;
-#include &lt;iostream&gt;
-
-int main() {
-    std::vector<int> v(5, 10);
-    for (int x : v) {
-        std::cout &lt;&lt; x &lt;&lt; " ";
-    }
-    return 0;
-}
-        </code></pre>
-    </div>
-
-    <!-- Repeat for all member functions -->
-
-    <h2>2. Element Access</h2>
-    <h3>Access Element (operator[])</h3>
-    <p>Accesses an element by index without bounds checking.</p>
-    <span class="toggle" onclick="toggleExample('example3')">[Click to view example]</span>
-    <div class="example" id="example3">
-        <pre><code>
-#include &lt;vector&gt;
-#include &lt;iostream&gt;
-
-int main() {
-    std::vector<int> v = {1, 2, 3, 4};
-    std::cout &lt;&lt; v[2] &lt;&lt; std::endl; // Output: 3
-    return 0;
-}
-        </code></pre>
-    </div>
-
-    <h3>Access Element (at)</h3>
-    <p>Accesses an element by index with bounds checking.</p>
-    <span class="toggle" onclick="toggleExample('example4')">[Click to view example]</span>
-    <div class="example" id="example4">
-        <pre><code>
-#include &lt;vector&gt;
-#include &lt;iostream&gt;
-
-int main() {
-    std::vector<int> v = {1, 2, 3, 4};
-    try {
-        std::cout &lt;&lt; v.at(2) &lt;&lt; std::endl; // Output: 3
-        std::cout &lt;&lt; v.at(10) &lt;&lt; std::endl; // Throws an exception
-    } catch (std::out_of_range& e) {
-        std::cerr &lt;&lt; e.what() &lt;&lt; std::endl;
-    }
-    return 0;
-}
-        </code></pre>
-    </div>
-
-    <!-- Continue similarly for all other functions -->
-
-</body>
+    <header>
+        <h1>Topics</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="stress-testing.html">Stress Testing</a>
+            <a href="code-editor.html">Code Editor</a>
+            <a href="community.html">Community</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Explore Topics</h2>
+        <ul>
+            <li><a href="#">C</a></li>
+            <li><a href="cpp.html">C++</a></li>
+            <li><a href="#">Python</a></li>
+            <li><a href="#">Java</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">HTML/CSS</a></li>
+            <li><a href="#">PHP</a></li>
+            <li><a href="#">MySQL</a></li>
+            <li><a href="#">Competitive Programming</a></li>
+            <li><a href="#">Assembly (ARM/x86)</a></li>
+        </ul>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 <a href= "https://imtiaj-hossain-saikat.netlify.app">Imtiaj Hossain Saikat. </a> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    </body>
 </html>
